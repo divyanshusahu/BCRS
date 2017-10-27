@@ -4,9 +4,9 @@
 
 	if (isset($_POST['register']))
 	{ 
-		$name = $_POST['name'];
-		$enrollmentNo = $_POST['enrollmentNo'];
-		$email = $_POST['email'];
+		$name = mysqli_real_escape_string($conn,$_POST['name']);
+		$enrollmentNo = mysqli_real_escape_string($_POST['enrollmentNo']);
+		$email = mysqli_real_escape_string($_POST['email']);
 		$password = mysqli_real_escape_string($conn,$_POST['password']);
 		$cpassword = mysqli_real_escape_string($conn,$_POST['cpassword']);
 		if ($password === $cpassword)
